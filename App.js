@@ -32,16 +32,14 @@ export default class App extends React.Component {
     return (
       <View style={styles.container} >
 
-
         <View style={styles.header} >
           <Text style={styles.headerText} >CovIS mobile app</Text>
         </View>
+
         <View style={styles.list} >
-          <View>
+          <View style={styles.listHeader} >
             <Text style={styles.listHeaderText} >List of nearby bluetooth devices</Text>
           </View>
-
-
           <ScrollView>
             {this.state.bluetoothDevices.map((item) => {
               return (
@@ -51,13 +49,12 @@ export default class App extends React.Component {
               )
             })}
           </ScrollView>
-
         </View>
+
         <View style={styles.list} >
-          <View>
+          <View style={styles.listHeader} >
             <Text style={styles.listHeaderText} >List of nearby Wi-Fi devices</Text>
           </View>
-
           <ScrollView>
             {this.state.wifiDevices.map((item) => {
               return (
@@ -100,6 +97,7 @@ const styles = StyleSheet.create({
     height: '10%',
     paddingTop: 20,
     paddingBottom: 20,
+    justifyContent: 'center',
   },
   headerText: {
     fontWeight: 'bold',
@@ -110,6 +108,9 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '45%',
     padding: 20,
+  },
+  listHeader: {
+    justifyContent: 'center',
   },
   listHeaderText: {
     fontWeight: 'bold',
